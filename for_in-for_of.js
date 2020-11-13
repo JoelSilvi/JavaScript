@@ -6,6 +6,7 @@ for (animal in animales){
     document.write(animal + "<br><br>");
 }
 
+
 document.write("<br><br><br>");
 
 
@@ -16,3 +17,13 @@ for (animal of animales){
 document.write("<br><br><br>");
 
 document.write(animales.edad);
+
+document.write("<br><br><br>");
+
+
+document.write("<br><br><br>");
+
+
+for(animal in animales){
+    document.write(animales[animal] + "<br><br>");
+}
