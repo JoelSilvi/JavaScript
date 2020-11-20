@@ -7,6 +7,7 @@ let correoUser = prompt ("Ingresa tu correo");
 let passUser = prompt ("Ingresa tu contraseña");
 
 
+
 // primera condición, evalua usuario y contraseña a la vez
 
 // if (correoDB===correoUser && passDB===passUser){
