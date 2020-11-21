@@ -23,7 +23,6 @@ function saludar(nombre){
     document.write(`Hello  ${nombre}`);
 }
 
-
 saludar("joel<br>");
 
 let nombre_funcion = prompt("escribe tu nombre");
