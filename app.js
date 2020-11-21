@@ -1,6 +1,9 @@
 let count = 50;
 
-while(count > 45){
-    document.write("Hello World<br><br>")
-    count--;
-}
+
+// bucle infinito
+
+// while(count > 45){
+//     console.log("Hello World")
+//     count++;
+// }
