@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>JavaScript Fundamentos</h1>
+    <script>
+    c=console.log
+
+
+    function unaFuncionQueDevuelveValor(){
+        c("Uno")
+        c("Dos")
+        c("Tres")
+        return "La funcion ha retornado una cadena de texto"
+    }
+
+    let valorDeFunccion = unaFuncionQueDevuelveValor()
+    c(valorDeFunccion)
+
+    function saludar(nombre = "juan",edad = 12){
+        c(`Hola mi nombre es ${nombre} y tengo ${edad} años`)
+    }
+
+    // functionExpresada()
+
+    const functionExpresada = function(){
+        c("Esto es una funcion expresada")
+    
+    }
+    functionExpresada()
+
+
+    </script>
+
+    <ul>
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+    </ul>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
