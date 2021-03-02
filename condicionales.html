@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionales</title>
+</head>
+<body>
+    <script>
+        c=console.log
+        const hora = 19
+
+        if(hora >= 0 && hora <=5){
+            c("Déjame dormir")
+        }else if(hora>5 && hora<=11){
+            c("Buenos dias")
+        }else if(hora>11 && hora<=18){
+            c("Buenas tardes")
+        }else{
+            c("Buenas noches")
+        }
+
+        
+        let edad = 18
+        c("Operador Ternario")
+        let eresMayor = (edad>=18) ? "Eres mayor de edad" : "Eres menor de edad"
+        c(eresMayor)
+
+
+        let dia = 5
+
+        switch (dia) {
+            case 0:
+                c("Domingo")
+                break;
+            case 1:
+                c("Lunes")
+                break;
+            case 2:
+                c("Martes")
+                break;
+            case 3:
+                c("Miércoles")
+                break;
+            case 4:
+                c("Jueves")
+                break;
+            case 5:
+                c("Viernes")
+                break;
+            case 6:
+                c("Sábado")
+                break;
+        
+            default:
+                c("El día no existe")
+                break;
+        }
+
+
+    </script>
+</body>
+</html>

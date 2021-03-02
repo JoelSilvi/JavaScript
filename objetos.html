@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+
+    <script>
+        c= console.log
+
+        let a = new String("Hola")
+        c(a)
+
+        const compa = {
+            nombre:"juan",
+            apellido:"vargas",
+            edad:35,
+            pasatiempos : ["Correr","clases","saltar"],
+            contacto: {
+                email:"analista@gmail.com",
+                ciudad:"stgo",
+                pasion:"TECH"
+            },
+            
+            saludar : function(){
+                c("Hola")
+            },
+
+            decirMiNombre: function(){
+                c(`Hola mi nombre es ${this.nombre} ${this.apellido} y mi edad es ${this.edad} años y mi correo es ${this.contacto.email}`)
+            }
+            
+        }
+        c(compa)
+        c(compa["nombre"])
+        c(compa["apellido"])
+        c(compa.pasatiempos[2])
+        c(compa.contacto.pasion)
+        compa.saludar()
+        compa.decirMiNombre()
+
+        c(Object.keys(compa))
+        c(Object.values(compa))
+        c(compa.hasOwnProperty("nombre"))
+        c(compa.hasOwnProperty("nacimiento"))
+
+
+    </script>
+    
+</body>
+</html>
