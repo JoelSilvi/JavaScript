@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Errores</title>
+</head>
+<body>
+    
+    <script>
+        c=console.log
+
+        try{
+            c("En el Try se agrega el código a evaluar")
+            noExiste
+            c("Segundo mensaje em el try")
+
+        //     c("En el Try se agrega el código a evaluar")
+        //     c("Segundo mensaje em el try")
+        //     noExiste
+            
+        }catch(error){
+            c("Catch, captura cualquier error surgido o lanzado en el try")
+            c(error)
+        }finally{
+            c("El bloque finally se ejecutará siempre al final de un bloque try-catch")
+        }
+
+        
+
+
+
+        try{
+            let numero = "a"
+
+            if(isNaN(numero)){
+                throw new Error("Solo debe ingresar números")
+            }
+
+            c(numero*numero)
+
+        }catch(error){
+
+            c(`Se produjo un error: ${error}`)
+
+        }finally{
+            c("El bloque finally siempre se ejecutará")
+        }
+    </script>
+</body>
+</html>
