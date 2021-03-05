@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuración</title>
+</head>
+<body>
+<script>
+    c=console.log
+
+    const numeros = [1,2,3]
+    // let uno = numeros[0]
+    // let dos = numeros[1]
+    // let tres = numeros[2]
+
+    // c(uno,dos,tres)
+
+    const [one,two,three] = numeros
+
+    c(one,two,three)
+
+    const persona = {
+        nombre: "joel",
+        apellido: "aguilar",
+        edad: 32
+    }
+
+    let{nombre,apellido,edad} = persona
+    c(nombre,apellido,edad)
+
+</script>
+
+    
+</body>
+</html>
