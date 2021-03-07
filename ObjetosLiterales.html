@@ -11,31 +11,36 @@
     <script>
         c=console.log
 
-    let nombre = "Joel"
-    let edad = 10
+        let nombre="joel"
+        let apellido="aguilar"
+        let edad=32
 
-    const perro = {
-        nombre:nombre,
-        edad:edad,
-        ladrar:function(){
-            c("guau guau")
+        const persona = {
+            nombre:nombre,
+            apellido:apellido,
+            edad:edad,
+            saludo:function(){
+                c("Hole")
+            }
         }
-    }
 
-    c(perro)
-    perro.ladrar()
+        c(persona)
+        persona.saludo()
 
-    const dog = {
-        nombre,
-        edad,
-        raza:"callejero",
-        ladrar() {
-            c("guau guau guau guau")
+        const people = {
+            nombre,
+            apellido,
+            edad,
+            saludo(){
+                c("Holaaaaaaa")
+
+            }
         }
-    }
 
-    c(dog)
-    dog.ladrar()
+        c(people)
+        people.saludo()
+
+    
 
 
     </script>

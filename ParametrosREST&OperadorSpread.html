@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parámetros REST & Operador Spread</title>
+</head>
+<body>
+    <script>
+        z=console.log
+        function sumar(a,b,...c){
+            let resultado = a + b
+            c.forEach(function(n){
+                resultado += n
+            })
+
+            return resultado
+        }
+
+        z(sumar(1,2))
+        z(sumar(1,2,3,1))
+        z(sumar(1,2,3,1,2))
+        z(sumar(1,2,3,1,2,4))
+
+        
+        const arreglo1 = [1,2,3,4,5],
+        arreglo2 = [6,7,8,9,10]
+
+        z(arreglo1,arreglo2)
+
+        const arreglo3 = [...arreglo1,arreglo2]
+
+        z(arreglo3)
+
+        
+    </script>
+</body>
+</html>
