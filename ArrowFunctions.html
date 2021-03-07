@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <script>
+        c=console.log
+
+        // cuando tiene una línea de códigos se borran las llaves
+        const saludar = () => c("Hola")
+        // cuando recibe un parámetro se eliminan paréntesis
+        const saludarConNombre = nombre => c(`Hola ${nombre}`)
+
+        saludar()
+        saludarConNombre("Irma")
+
+
+        const sumar = (a,b) => c(`La suma de ${a} + ${b} es ${a+b}`)
+        sumar(1,2)
+        sumar(2,2)
+
+        const sumarMas = (a,b) => a+b
+        c(sumarMas(3,4))
+
+
+        const funcionDeVariasLineas = () =>{
+            c("Uno")
+            c("Dos")
+            c("tres")
+        }
+
+        funcionDeVariasLineas()
+
+        const numero = [1,2,3,4,5]
+        numero.forEach((el,index)=> c(`El elemento ${el} está en la posicion ${index}`))
+
+        const persona = {
+            nombre:"joel",
+            saludar(){
+                c(this)    
+            }
+        }
+
+        persona.saludar()
+
+
+    </script>
+</body>
+</html>

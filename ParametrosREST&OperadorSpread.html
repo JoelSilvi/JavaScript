@@ -13,27 +13,24 @@
             let resultado = a + b
             c.forEach(function(n){
                 resultado += n
-            })
 
+            })
             return resultado
         }
 
-        z(sumar(1,2))
-        z(sumar(1,2,3,1))
-        z(sumar(1,2,3,1,2))
-        z(sumar(1,2,3,1,2,4))
+    z(sumar(1,2))
+    z(sumar(1,2,3))
+    z(sumar(1,2,3,1))
+    z(sumar(1,2,3,1,2))
+    z(sumar(1,2,3,1,2,1))
+    
 
+        const arr1 = [1,2,3,4,5],
+        arr2 = [6,7,8,9,10]
         
-        const arreglo1 = [1,2,3,4,5],
-        arreglo2 = [6,7,8,9,10]
+        const arr3 = [arr1,...arr2]
 
-        z(arreglo1,arreglo2)
-
-        const arreglo3 = [...arreglo1,arreglo2]
-
-        z(arreglo3)
-
-        
+        z(arr3)
     </script>
 </body>
 </html>
