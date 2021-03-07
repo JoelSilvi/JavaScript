@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipos</title>
+</head>
+<body>
+    <script>
+        
+        c=console.log
+
+        function Animal(nombre,genero){
+            // Atributos
+            this.nombre = nombre
+            this.genero = genero
+        }
+        
+        // Métodos
+        Animal.prototype.sonar = function(){
+            c("Hola this")
+        }
+
+        Animal.prototype.saludar = function() {
+            c("Hola Hola")
+        }
+
+        const snoopy = new Animal("snoopy","macho"),
+        lolaBunny = new Animal("lolaBunny","Hembra")
+
+        c(snoopy)
+        c(lolaBunny)
+        
+        snoopy.sonar()
+        snoopy.saludar()
+        lolaBunny.sonar()
+        lolaBunny.saludar()
+    </script>
+</body>
+</html>
