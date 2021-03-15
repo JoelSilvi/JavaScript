@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Date</title>
+</head>
+<body>
+
+    <script>
+        c = console.log
+
+        c(Date())
+
+        let fecha = new Date()
+        c(fecha)
+        // día del mes
+        c(fecha.getDate())
+        //día de la semana D L M M J V S -> 0 1 2 3 4 5 6
+        c(fecha.getDay())
+        // mes DIC-> 0 1 2 3 4 5 6 7 8 9 10 11
+        c(fecha.getMonth())
+        // Año
+        c(fecha.getFullYear())
+        // Hora - minutos -Segundos - Milisegundos
+        c(fecha.getHours())
+        c(fecha.getMinutes())
+        c(fecha.getSeconds())
+        c(fecha.getMilliseconds())
+        // date completo
+        c(fecha.toString())
+        // solo la fecha
+        c(fecha.toDateString())
+        // solo la hora
+        c(fecha.toLocaleString())
+        // solo la fecha
+        c(fecha.toLocaleDateString())
+        // solo la hora
+        c(fecha.toLocaleTimeString())
+        // Uso Horario
+        c(fecha.getTimezoneOffset())
+        // Datos hora 0
+        c(fecha.getUTCDate())
+        
+        c(fecha.getUTCHours())
+        c(Date.now())
+
+        let cumpleJoel = new Date(1988,9,13)
+        c(cumpleJoel)
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
