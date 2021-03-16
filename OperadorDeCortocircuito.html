@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador de Cortocircuito</title>
+</head>
+<body>
+    <script>
+        c = console.log
+
+        // Cortocircuito con OR
+        function saludar(nombre){
+            nombre = nombre || "Federico"
+            c(`Hola ${nombre}`)
+        }
+        c()
+
+        saludar("Joel")
+        saludar()
+        c("cadena" || "Valor de la derecha")
+        c(1 || "juan")
+        c(true || 12)
+        c([] || 11)
+        c({} || 15)
+        c(false || "valor de la derecha")
+        c(NaN || 10)
+        c(0 || "valor de la derecha")
+        c(undefined || "valor de la derecha")
+
+        c(false && 12)
+        c(null && 15)
+        c(undefined && 10)
+        c(NaN && 5)
+
+    </script>
+</body>
+</html>
