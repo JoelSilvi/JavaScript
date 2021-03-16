@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Math</title>
+</head>
+<body>
+    <script>
+        c = console.log
+
+        c(Math)
+        c(Math.PI)
+        c(Math.abs(-7.8))
+        // ceil redondear el número mayor
+        c(Math.ceil(7.8))
+        c(Math.ceil(7.2))
+        // borra lo que viene después del punto, y se queda con el primer número entero
+        c(Math.floor(7.8))
+        // redondea al más cercano
+        c(Math.round(7.4))
+        c(Math.round(7.5))
+        // raíz cuadrada
+        c(Math.sqrt(81))
+        // elevar potencias
+        c(Math.pow(2,5))
+        // si el número es negativo dará -1, si es positivo dará 1, si es 0 dará 0
+        c(Math.sign(-5))
+        c(Math.sign(0))
+        c(Math.sign(5))
+        // siempre va a dar un número aleatorio entre 0 y 1, y se pueden agregar parámetros
+        c(Math.random()*10)
+        c(Math.round(Math.random()*20))
+
+    </script>
+</body>
+</html>
