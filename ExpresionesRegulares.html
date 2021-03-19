@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones Regulares</title>
+</head>
+<body>
+    <script>
+        let cadena = "Lorem 3ipsum dolor sit, amet consectetur adipisicinglorem elit. Et, quos."
+        // let expresionRegular = new RegExp("lorem","ig")
+        // let expresionRegular2 = /[0-9]/ig
+        
+        // let expresionRegular2 = /lorem{1,}/ig
+        let expresionRegular2 = /lorem{1}/ig
+
+        // console.log(expresionRegular.test(cadena))
+        // console.log(expresionRegular.exec(cadena))
+        console.log(expresionRegular2.test(cadena))
+        console.log(expresionRegular2.exec(cadena))
+
+    </script>
+</body>
+</html>
