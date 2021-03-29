@@ -163,7 +163,7 @@ const eliminarCaracteres = (texto = "", patron = "") =>
 
     const aleatorio = () => console.info(Math.round(Math.random () * 100) + 500)
 
-    aleatorio()
+    // aleatorio()
 
 // 10) Programa una función que reciba un número y evalúe si es capicúa o no 
 // (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
@@ -214,12 +214,113 @@ const eliminarCaracteres = (texto = "", patron = "") =>
         return console.info(`El factorial de ${numero} es ${factorial}`)
     }
 
-    factorial()
-    factorial("5")
-    factorial([1,2,3])
-    factorial(0)
-    factorial(-5)
-    factorial(5)
+    // factorial()
+    // factorial("5")
+    // factorial([1,2,3])
+    // factorial(0)
+    // factorial(-5)
+    // factorial(5)
+
+
+    // 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1)
+    // o no, pe. miFuncion(7) devolverá true.
+
+    const numeroPrimo = (numero = undefined) =>{
+        if(numero === undefined) return console.warn("No ingresaste un número")
+
+        if(typeof numero !== "number") return console.error(`El valor ${numero} ingresado, NO es un número`)
+
+        if(numero === 0) return console.error("El número ingresado no puede ser 0")
+
+        if(numero === 1) return console.error("El número no puede ser 1")
+
+        if(Math.sign(numero) === -1) return console.error("El número no puede ser negativo")
+
+        let divisible = false
+
+        for (let i = 2; i < numero; i++){
+            if ((numero % i) === 0){
+                divisible = true
+                break
+            }
+        }
+
+        return(divisible)
+            ? console.log(`El número ${numero}, NO es primo`)
+            : console.log(`El número ${numero}, Si es primo`)
+    }
+
+    // numeroPrimo()
+    // numeroPrimo("7")
+    // numeroPrimo(true)
+    // numeroPrimo({})
+    // numeroPrimo(1)
+    // numeroPrimo(0)
+    // numeroPrimo(-2)
+    // numeroPrimo(13)
+    // numeroPrimo(200)
+    // numeroPrimo(15)
+    // numeroPrimo(7)
+
+    // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+
+    const numeroPar = (numero = undefined) =>{
+        if(numero === undefined) return console.warn("No ingresaste un número")
+
+        if (typeof numero !== "number") return console.error(`El valor "${numero}" NO es un número`)
+
+        return((numero % 2) === 0)
+            ? console.log(`El número ${numero} es PAR`)
+            : console.log(`El número ${numero} es IMPAR`)
+    }
+
+    // numeroPar()
+    // numeroPar("2")
+    // numeroPar(-369)
+    // numeroPar(19)
+    // numeroPar(10)
+    // numeroPar(-20)
+
+    // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+
+    const convertirGrados = (grados = undefined, unidad = undefined) =>{
+        if (grados === undefined) return console.warn("No ingresaste grados a convertir")
+
+        if (typeof grados !== "number") return console.error(`El valor "${grados}" ingresado, NO es un número`)
+
+        if (unidad === undefined) return console.warn("NO ingresaste el tipo de grado a convertir")
+
+        if (typeof unidad !== "string") return console.error(`El valor "${unidad}" ingresado, NO es una cadena de texto`)
+
+        if(unidad.length !== 1 || !/(C|F)/.test(unidad)) return console.warn("Valor de unidad no reconocido")
+
+        if(unidad === "C"){
+            return console.info(`${grados}°C = ${Math.round(grados*(9/5) + 32)}°F`)
+        }else if (unidad === "F"){
+            return console.info(`${grados}°F = ${Math.round(((grados - 32) * (5/9)))}`)
+        }else{
+            return console.error("El tipo de grados a convertir NO es válido")
+        }
+
+        console.info("funciona con la letra c y la f en mayúsculas")
+    }
+
+    convertirGrados()
+    convertirGrados("2")
+    convertirGrados(2)
+    convertirGrados(2,true)
+    convertirGrados(2,"Hola")
+    convertirGrados(2,"E")
+    convertirGrados(2,"C")
+    convertirGrados(2,"F")
+    convertirGrados(2,"c")
+    convertirGrados(0,"C")
+    convertirGrados(100,"C")
+    convertirGrados(32,"F")
+    convertirGrados(100,"F")
+    
+
+
 
     </script>
 </body>
