@@ -9,5 +9,30 @@
 <body>
     <h1>Asincronía en JavaScript</h1>
     
+    <script>
+        console.log("inicio");
+
+        // setTimeout(() =>{
+        //     console.log("Probando setTimeout, esto se ejecuta una sola vez")
+        // },3000);
+        
+        // setInterval(() =>{
+        //     console.log("Probando setInterval, esto se ejecuta varias veces")
+        // },3000);
+
+        let intervalo = setInterval(() =>{
+            console.log(new Date().toLocaleTimeString());
+        },1000)
+
+        clearInterval(intervalo)
+        console.log("después del setInterval")
+
+        // let temporizador = setTimeout(() =>{
+        //     console.log(new Date().toLocaleTimeString());
+        // },5000)
+
+        // clearTimeout(temporizador)
+        // console.log("después del clearTimeout")
+    </script>
 </body>
 </html>
