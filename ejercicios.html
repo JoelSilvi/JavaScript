@@ -8,7 +8,6 @@
 </head>
 <body>
 <h1>Ejercicios de Programación</h1>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum nobis optio et enim atque a ea asperiores esse quo vel!</p>
 
 <!-- 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10. -->
 
@@ -305,20 +304,59 @@ const eliminarCaracteres = (texto = "", patron = "") =>
         console.info("funciona con la letra c y la f en mayúsculas")
     }
 
-    convertirGrados()
-    convertirGrados("2")
-    convertirGrados(2)
-    convertirGrados(2,true)
-    convertirGrados(2,"Hola")
-    convertirGrados(2,"E")
-    convertirGrados(2,"C")
-    convertirGrados(2,"F")
-    convertirGrados(2,"c")
-    convertirGrados(0,"C")
-    convertirGrados(100,"C")
-    convertirGrados(32,"F")
-    convertirGrados(100,"F")
+    // convertirGrados()
+    // convertirGrados("2")
+    // convertirGrados(2)
+    // convertirGrados(2,true)
+    // convertirGrados(2,"Hola")
+    // convertirGrados(2,"E")+
+    // convertirGrados(2,"C")
+    // convertirGrados(2,"F")
+    // convertirGrados(2,"c")
+    // convertirGrados(0,"C")
+    // convertirGrados(100,"C")
+    // convertirGrados(32,"F")
+    // convertirGrados(100,"F")
     
+
+
+// 15) Programa una función para convertir números de base binaria a decimal y viceversa,
+// pe. miFuncion(100,2) devolverá 4 base 10.
+
+const convertirBinarioDecimal = (numero = undefined, base = undefined) => {
+    if (numero === undefined) return console.warn("No ingresaste el número a convertir");
+
+    if (typeof numero !== "number") return console.error (`el valor "${numero}" ingresado, No es un número`);
+
+    if (base === undefined) return console.warn("No ingresaste la base a convertir");
+
+    if (typeof base !== "number") return console.error(`el valor "${base}" NO es un número`);
+
+    if(base === 2){
+        return console.info(`${numero} base ${base} = ${parseInt(numero, base)} base 10`)
+    }else if (base === 10){
+        return console.info(`${numero} base ${base} = ${numero.toString(2)} base2`)
+    }else{
+        return console.error("El tipo de datos a convertir NO es válido")
+    }
+}
+
+convertirBinarioDecimal()
+convertirBinarioDecimal("2")
+convertirBinarioDecimal(100)
+convertirBinarioDecimal(100,"20")
+convertirBinarioDecimal(100,2)
+convertirBinarioDecimal(4,10)
+convertirBinarioDecimal(114,10)
+convertirBinarioDecimal(114,3)
+
+// 16) Programa una función que devuelva el monto final después de aplicar un descuento a
+// una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+
+
+
+// 17) Programa una función que dada una fecha válida determine cuantos años han pasado
+// hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
 
 
 
