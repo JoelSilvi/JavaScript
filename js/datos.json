@@ -1,0 +1,11 @@
+{
+    "nombre": "Joel",
+    "numero": "35",
+    "booleano": "true",
+    "arreglo": ["trabajar","estudiar","deporte"],
+    "objeto": {
+        "twitter": "@joel",
+        "email": "joel@joel.com"
+    },
+    "nulo":null
+}
