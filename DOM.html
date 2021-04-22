@@ -46,6 +46,25 @@
             filter: invert(100%);
         }
 
+        .eventos-flujo div{
+            padding: 4rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .uno{
+            background-color: yellow;
+        }
+
+        .dos{
+            background-color: gold;
+        }
+
+        .tres{
+            background-color: lightyellow;
+        }
+
+
     </style>
 </head>
 <body>
@@ -133,7 +152,20 @@
     <button id="evento-multiple">Evento con manejador multiple</button>
     <br><br>
     <button id="evento-remover">Removiendo eventos con manejadores múltiples</button>
-
+    <br><br>
+    <h4>Flujo de Eventos</h4>
+    <section class="eventos-flujo">
+        <div class="uno">
+            1
+            <div class="dos">
+                2
+                <div class="tres">
+                    3
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br>
 
     <!-- <script src="js/Nodos_Elementos_y_Selectores.js"></script> -->
     <!-- <script src="js/Atributos_y_Data-Attributes.js"></script> -->
@@ -146,6 +178,7 @@
     <!-- <script src="js/Modificando_Elementos.js"></script> -->
     <!-- <script src="js/Modificando_Elementos_Cool.js"></script> -->
     <!-- <script src="js/Manejadores_de_Eventos.js"></script> -->
-    <script src="js/Eventos_con_Parametros_y_Remover_Eventos.js"></script>
+    <!-- <script src="js/Eventos_con_Parametros_y_Remover_Eventos.js"></script> -->
+    <script src="js/Flujo_de_Eventos.js"></script>
 </body>
 </html>
