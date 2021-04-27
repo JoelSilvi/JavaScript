@@ -88,7 +88,7 @@
                 let res = await fetch("https://jsonplaceholder.typicode.com/users"),
                     json = await res.json();
 
-                    console.log(res,json);
+                    // console.log(res,json);
 
                     // if(!res.ok) throw new Error("Ocurrió un error al solicitar los datos");
                     if(!res.ok) throw {status: res.status, statusText: res.statusText}
@@ -103,12 +103,12 @@
                     $fetchAsync.appendChild($fragment);
 
             }catch(err){
-                console.log(err)
+                // console.log(err)
                 let message = err.statusText || "Ocurrió un error";
                 $fetchAsync.innerHTML = `Error ${err.status}: ${message}`;
 
             } finally{
-                console.log("Esto se ejecutará independientemente del resultado de la Promesa Fetch")
+                // console.log("Esto se ejecutará independientemente del resultado de la Promesa Fetch")
 
             }
         }
@@ -118,5 +118,37 @@
 
         
 
+
+})();
+
+
+
+(()=>{
+    const $axios = document.getElementById("axios"),
+        $fragment = document.createDocumentFragment();
+
+
+        axios.get("https://jsonplaceholder.typicode.com/user")
+        .then(res =>{
+            console.log(res);
+            let json = res.data;
+            json.forEach((el)=>{
+                const $li = document.createElement("li");
+                $li.innerHTML = `${el.name} -- ${el.email} -- ${el.phone}`;
+                $fragment.appendChild($li);
+            });
+
+            $axios.appendChild($fragment);
+        })
+
+        .catch((err) =>{
+            console.log(err.response);
+            let message = err.response.statusText || "Ocurrió un error";
+            $axios.innerHTML = `Error ${err.response.status}: ${message}`;
+        })
+
+        .finally(()=>{
+            console.log("Esto se ejecutará independientemente del resultado Axios");
+        });
 
 })();
