@@ -51,6 +51,11 @@
       "id": 5,
       "nombre": "Perico",
       "de": "Inframundo"
+    },
+    {
+      "nombre": "MU",
+      "de": "Aries",
+      "id": 6
     }
   ]
 }
