@@ -54,8 +54,18 @@
     },
     {
       "nombre": "MU",
-      "de": "Aries",
+      "de": "cacaca",
       "id": 6
+    },
+    {
+      "nombre": "doco",
+      "de": "libra",
+      "id": 7
+    },
+    {
+      "nombre": "juan",
+      "de": "juanes",
+      "id": 8
     }
   ]
 }
