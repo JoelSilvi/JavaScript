@@ -38,7 +38,7 @@
     <template id="crud-template">
         <tr>
             <td class="name">Seiya</td>
-            <td class="de">Pegaso</td>
+            <td class="dede">Pegaso</td>
             <td>
                 <button class="edit">Editar</button>
                 <button class="delete">Eliminar</button>
@@ -46,13 +46,142 @@
         </tr>
     </template>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script>
         const d = document,
             $table = d.querySelector(".crud-table"),
             $form = d.querySelector(".crud-form"),
             $title = d.querySelector(".crud-title"),
-            $template = d.querySelector("crud-template").content,
+            $template = d.getElementById("crud-template").content,
             $fragment = d.createDocumentFragment();
+
+        const getAll = async () => {
+            try{
+                let res = await axios.get("http://localhost:5555/Dioses"),
+                json = await res.data;
+
+                console.log(json);
+
+                json.forEach(el =>{
+                    $template.querySelector(".name").textContent = el.nombre;
+                    $template.querySelector(".dede").textContent = el.de;
+                    $template.querySelector(".edit").dataset.id = el.id;
+                    $template.querySelector(".edit").dataset.name = el.nombre;
+                    $template.querySelector(".edit").dataset.dede = el.de;
+                    $template.querySelector(".delete").dataset.id = el.id;
+
+                    let $clone = d.importNode($template, true);
+                    $fragment.appendChild($clone);
+                });
+
+                $table.querySelector("tbody").appendChild($fragment);
+
+            }catch (err){
+
+                let message = err.statusText || "Ocurrió un error";
+                $table.insertAdjacentHTML("afterend",`<p><b>Error ${err.status}: ${message}</b></p>`);
+            }
+        }
+        
+        d.addEventListener("DOMContentLoaded",getAll);
+
+
+        d.addEventListener("submit", async e =>{
+            if(e.target === $form){
+                e.preventDefault();
+
+                if(!e.target.id.value){
+                    // CREATE - POST
+                    try{
+
+                        let options = {
+                            method : "POST",
+                            headers :{
+                                "Content-Type" : "application/json; charset = utf-8"
+                            }, 
+
+                            data:JSON.stringify({
+                                nombre: e.target.nombre.value,
+                                de: e.target.de.value
+                            })
+                        },
+
+                        res = await axios ("http://localhost:5555/Dioses",options),
+                        json = await res.data;
+
+                        location.reload();
+                        
+                        if (!res.ok) throw {status: res.status, statusText:res.statusText}
+
+
+                    }catch (err){
+                        let message = err.statusText || "Ocurrió un error";
+                        $form.insertAdjacentHTML("afterend",`<p><b>Error ${err.status}:${message}</b></p>`);
+                    }
+                } else {
+                    // UPDATE - PUT
+                    try{
+                        let options = {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type" : "application/json; charset = utf-8"
+                            },
+
+                            data: JSON.stringify({
+                                nombre : e.target.nombre.value,
+                                de : e.target.de.value
+                            })
+                        },
+
+                        res = await axios (`http://localhost:5555/Dioses/${e.target.id.value}`,options),
+                        json = await res.data;
+
+                        location.reload();
+
+                    }catch (err){
+                        let message = err.statusText || "Ocurrió un error";
+                        $form.insertAdjacentHTML("afterend",`<p><b>Error ${err.status}: ${message}</b></p>`);
+                    }
+                }
+            }
+        });
+
+
+
+        d.addEventListener("click",async e =>{
+            if(e.target.matches(".edit")){
+                $title.textContent ="Editar Santo";
+                $form.nombre.value = e.target.dataset.name;
+                $form.de.value = e.target.dataset.dede;
+                $form.id.value = e.target.dataset.id;
+            }
+
+            if(e.target.matches(".delete")){
+                let isDelete = confirm(`Estás seguro de eliminar el id ${e.target.dataset.id}`);
+
+                if(isDelete){
+                    // Delete - DELETE
+                    try{
+                        let options = {
+                            method : "DELETE",
+                            headers: {
+                                "Content-Type" : "application/json; charset = utf-8"
+                            }
+                        },
+                        res = await axios (`http://localhost:5555/Dioses/${e.target.dataset.id}`,options),
+                        json = await res.data;
+                        
+                        location.reload();
+
+                    }catch (err){
+                        let message = err.statusText || "Ocurrió un error";
+                        alert(`Error ${err.status}: ${message}`);
+                    }
+                }
+
+            }
+        });
 
 
     </script>
