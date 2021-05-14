@@ -1,7 +1,0 @@
-OneDrive1   = https://gglcl-my.sharepoint.com/personal/g_temuco_ggl_cl/_layouts/15/storman.aspx
-Servidor    = https://gglcl-my.sharepoint.com/personal/servidor_ggl_cl/_layouts/15/storman.aspx
-Soporte     = https://gglcl-my.sharepoint.com/personal/soporte_ggl_cl/_layouts/15/storman.aspx
-c.matriz    = https://gglcl-my.sharepoint.com/personal/c_matriz_ggl_cl/_layouts/15/storman.aspx
-c.boston    = https://gglcl-my.sharepoint.com/personal/c_boston_ggl_cl/_layouts/15/storman.aspx
-hcurico     = https://gglcl-my.sharepoint.com/personal/hcurico_ggl_cl/_layouts/15/storman.aspx
-b.barcelona = https://gglcl-my.sharepoint.com/personal/b_barcelona_ggl_cl/_layouts/15/storman.aspx
