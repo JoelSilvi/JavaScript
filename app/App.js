@@ -1,8 +1,22 @@
 import api from "./helpers/wp_api.js"
+import {ajax} from "./helpers/ajax.js"
 
 export function App (){
-    document.getElementById("root").innerHTML = `<h1>Página SPA vanilla JS </h1>`;
+    document.getElementById("root").innerHTML = `<h1>SPA con vanilla JS </h1>`;
 
-    console.log(api)
+    console.log(api);
+
+    ajax({
+        url:api.POST,
+        cbSuccess: (posts) =>{
+            console.log(posts);
+        }
+    });
+
+    ajax({
+        url: api.CATEGORIES,
+        cbSuccess:(categories) => console.log(categories)
+    })
+    
 }
 
