@@ -39,6 +39,31 @@ img{
     color: white;
 }
 
+.form-search{
+    margin: auto;
+    text-align: center;
+}
+
+.form-search input{
+    display: block;
+    margin: auto;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.header{
+    padding: .5rem;
+    position: sticky;
+    text-align: center;
+    top: 0;
+    background-color: white;
+}
+
+.header > *{
+    margin: 1rem auto;
+}
+
 .loader{
     margin: 1rem auto;
     display: block;
