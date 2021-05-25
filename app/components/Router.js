@@ -16,7 +16,18 @@ export function Router(){
 
 
         if(!hash || hash === "#/"){
-            $posts.innerHTML = "<h2>Sección del Home</h2>";
+            ajax({
+                url: api.POSTS,
+                cbSuccess:(posts)=>{
+                    // console.log(posts);
+                    let html = "";
+                    
+                        
+                    posts.forEach((post) => (html += PostCard(post)));
+                    d.querySelector(".loader").style.display = "none";
+                    $posts.innerHTML = html;
+                },
+            });
         }else if(hash.includes("#/search")){
             $posts.innerHTML = "<h2>Sección del Buscador</h2>";
         }else if(hash === "#/contacto"){
@@ -26,16 +37,5 @@ export function Router(){
         }
 
         
-    // ajax({
-    //     url: api.POSTS,
-    //     cbSuccess:(posts)=>{
-    //         // console.log(posts);
-    //         let html = "";
-            
-                
-    //         posts.forEach((post) => (html += PostCard(post)));
-    //         d.querySelector(".loader").style.display = "none";
-    //         d.getElementById("posts").innerHTML = html;
-    //     },
-    // });
+
 }
