@@ -1,21 +1,20 @@
-export async function ajax(props){
-    let {url, cbSuccess} = props;
+export async function ajax(props) {
+  let { url, cbSuccess } = props;
 
+  await fetch(url)
+    .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+    .then((json) => cbSuccess(json))
+    .catch((err) => {
+      let message = err.statusText || "Ocurrió un error al acceder a la API";
 
-    await fetch(url)
-        .then((res) => (res.ok ? res.json() : Promise.reject(res)))
-        .then((json) => cbSuccess(json))
-        .catch((err) =>{
-            let message = err.statusText || "Ocurrió un error al acceder a la API";
-
-            document.getElementById("main").innerHTML = `
+      document.getElementById("main").innerHTML = `
                 <div class ="error">
                     <p>Err ${err.status}: ${message}</p>
-                </div>    
+                </div>
             `;
 
-            document.querySelector(".loader").getElementsByClassName.display = "none";
+      document.querySelector(".loader").getElementsByClassName.display = "none";
 
-            console.log(err)
-        });
+      console.log(err);
+    });
 }
