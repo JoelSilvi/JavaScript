@@ -13,6 +13,5 @@ export function App() {
   $root.appendChild(Loader());
 
   Router();
-
   InfiniteScroll();
 }
